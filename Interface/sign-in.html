@@ -84,7 +84,7 @@
             caller.setRequestHeader('Content-Type', 'application/json');
             caller.onload = function() {
                 response_got=JSON.parse(caller.responseText);
-                //console.log(response_got);
+                console.log(response_got.message);
                 //console.log(caller.status);
                 //console.log(caller.statusText);
                 if( response_got.status === 109 ){
@@ -122,7 +122,7 @@
         caller.setRequestHeader('Content-Type', 'application/json');
         caller.onload = function() {
             response_got=JSON.parse(caller.responseText);
-            //console.log(response_got);
+            console.log(response_got.message);
             //console.log(caller.status);
             //console.log(caller.statusText);
             if( response_got.status == 108 ){

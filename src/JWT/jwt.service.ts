@@ -17,10 +17,15 @@ export class JWTService {
 
   async verify_AT(token: string): Promise<any> {              //verifying Refresh Token and returns payload
     try {
-      if (await JWT.verify(token, process.env.Access_TOKEN_SECRET)) {
+      if (await JWT.verify(token, process.env.ACCESS_TOKEN_SECRET)) {
         return {
           "status": 109,
           "message": "Token Verified"
+        };
+      }else{
+        return {
+          "status": 0,
+          "message": "Token Invalid"
         };
       }
     } catch {
