@@ -43,7 +43,7 @@
         .textbox
         {
             color: blueviolet;
-            font-size: 20px;
+            font-size: 25px;
             align-items:last baseline
         }
         .buttons
@@ -53,6 +53,54 @@
             font-size: 20px;
             color: rgb(255, 255, 255);
             background-color: rgb(143, 67, 214);
+        }
+        @media screen and (max-width: 621px)
+        {
+            #detail_box
+            {
+                margin-left: 2%;
+                margin-right: 2%;
+            }
+            #form
+            {
+                margin-left: 7%;
+                margin-right: 7%;
+                text-align: center;
+            }
+            .textbox
+            {
+                font-size: 15px;
+            }
+        }
+        @media screen and (max-width: 700px)
+        {
+            .textbox
+            {
+                font-size: 17px;
+            }
+        }
+        @media screen and (max-width: 800px)
+        {
+            .textbox
+            {
+                font-size: 20px;
+            }
+        }
+        @media screen and (max-width: 900px)
+        {
+            .textbox
+            {
+                font-size: 22px;
+            }
+        }
+        @media screen and (max-width: 1085px)
+        {
+            #form
+            {
+                margin-left: 7%;
+                margin-right: 7%;
+                text-align: center;
+            }
         }
     </style>
     <script>
@@ -100,7 +148,7 @@
     <label for="Male"><input type="radio" name='gender' value="Male">Male</label><br>
 	<label for="Female"><input type="radio" name='gender' value="Female">Female</label><br>
 	<label for="Other"><input type="radio" name='gender' value="Other">Other</label><br>
-    <p id="error">----------------------</p>
+    <p id="error">------------------</p>
     <input type="reset" value="CLEAR" class="buttons">
     <input type="button" value="GENERATE" class="buttons" onclick="api_details()"><br><br>
     </div>
