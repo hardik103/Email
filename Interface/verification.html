@@ -34,11 +34,12 @@
             font-weight:bold;
             color: blueviolet;
         }
-        #textbox
+        .textbox
         {
             color: blueviolet;
             background-color:rgb(201, 198, 198);
-            font-size: 20px;
+            font-size: 15px;
+            border-radius: 25px;
         }
         .buttons
         {
@@ -47,6 +48,14 @@
             font-size: 20px;
             color: rgb(255, 255, 255);
             background-color: rgb(143, 67, 214);
+        }
+        @media screen and (max-width: 700px)
+        {
+            #detail_box
+            {
+                margin-left: 2%;
+                margin-right: 2%;
+            }
         }
     </style>
     <script>
@@ -185,14 +194,14 @@
     <p id="text">OTP SENT TO </p> 
     <div align="center" id="detail_box">
     <form>
-    Enter your OTP <input type="number" name="otp" class="textbox" oninput="check_length('otp')" id="otp"><br><br>
-    Create Password <input type="password" name="password" class="textbox" oninput="check_length('password_1')" id="password_1"><br>
-    ReEnter Password <input type="password" class="textbox" oninput="check_length('password_2')" id="password_2"><br><br>
+    Enter your OTP<br><input type="number" name="otp" class="textbox" oninput="check_length('otp')" id="otp"><br><br>
+    Create Password<br><input type="password" name="password" class="textbox" oninput="check_length('password_1')" id="password_1"><br><br>
+    ReEnter Password<br><input type="password" class="textbox" oninput="check_length('password_2')" id="password_2"><br><br>
     <input type="reset" value="  Clear  " class="buttons">
     <input type="button" value="  Resend " class="buttons" onclick="api_resend()">
     <input type="button" value=" Sign Up " class="buttons" onclick="check_conditions()"><br>
-    <p id="error">------------------</p><br>
+    <p id="error">-----------------</p><br>
     </form>
-    </div>
+</div>
 </body>
 </html>
