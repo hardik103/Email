@@ -159,6 +159,7 @@
                 }
             }
         }
+        return false;
         document.getElementById('error').innerHTML=message;
     }
 
@@ -193,13 +194,13 @@
     <H1 id="heading">VERIFICATION WINDOW</H1> 
     <p id="text">OTP SENT TO </p> 
     <div align="center" id="detail_box">
-    <form>
-    Enter your OTP<br><input type="number" name="otp" class="textbox" oninput="check_length('otp')" id="otp"><br><br>
-    Create Password<br><input type="password" name="password" class="textbox" oninput="check_length('password_1')" id="password_1"><br><br>
-    ReEnter Password<br><input type="password" class="textbox" oninput="check_length('password_2')" id="password_2"><br><br>
+    <form onsubmit="return check_conditions()">
+    Enter your OTP<br><input type="number" name="otp" class="textbox" oninput="check_length('otp')" id="otp" required><br><br>
+    Create Password<br><input type="password" name="password" class="textbox" oninput="check_length('password_1')" id="password_1" required><br><br>
+    ReEnter Password<br><input type="password" class="textbox" oninput="check_length('password_2')" id="password_2" required><br><br>
     <input type="reset" value="  Clear  " class="buttons">
     <input type="button" value="  Resend " class="buttons" onclick="api_resend()">
-    <input type="button" value=" Sign Up " class="buttons" onclick="check_conditions()"><br>
+    <input type="submit" value=" Sign Up " class="buttons"><br>
     <p id="error">-----------------</p><br>
     </form>
 </div>

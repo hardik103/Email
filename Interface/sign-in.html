@@ -152,9 +152,9 @@
         
         if(reset_loaded==false){
             document.getElementById('reset').innerHTML = `<br>
-            Enter Your Email <input type="email" name="email" class="textbox">
+            Enter Your Email <input type="email" name="email" class="textbox" required>
             <br><br>
-            <input type="reset" value="CLEAR" class="buttons">  <input type="button" value="SEND OTP" class="buttons" onclick="api_reset()">
+            <input type="reset" value="CLEAR" class="buttons">  <input type="submit" value="SEND OTP" class="buttons">
             <br><br>`;
             reset_loaded=true;
         }else{
@@ -185,6 +185,7 @@
             }
         }
         caller.send(sender);
+        return false;
     }
 
     function api_reset(){
@@ -192,6 +193,7 @@
         const formData = new FormData(form);
         const data = Object.fromEntries(formData);
         const sender = JSON.stringify(data);
+        
         let obj = sender.substring(0,sender.length-1);
         obj = obj.concat(`,"mode":"reset"}`)
         const caller = new XMLHttpRequest();
@@ -210,6 +212,7 @@
             }
         }
         caller.send(obj);
+        return false;
     }
     </script>
 </head>
@@ -218,14 +221,14 @@
     <p id="text">ENTER YOUR CREDENTIALS</p>
     <div id="detail_box">
         <br>
-    <form id="credentials">
+    <form id="credentials" onsubmit="return api_credentials()">
     Email<br>
     <input type="email" name="email" class="textbox" required><br><br>
     Password<br>
     <input type="password" name="password" class="textbox" required><br><br>
     <p id="error"></p>
     <input type="reset" value="CLEAR" class="buttons">
-    <input type="button" value="SIGN IN" class="buttons" onclick="api_credentials()"><br><br>
+    <input type="submit" value="SIGN IN" class="buttons"><br><br>
     </form>
     </div>
     <p id="text">
@@ -233,6 +236,6 @@
         FORGOT PASSWORD ?<br><input type="button" value="RESET" class="buttons" onclick="reset_section()"> 
     </p>
     <p id="error"></p>
-    <form id="reset" align="center"></form>
+    <form id="reset" onsubmit="return api_reset()" align="center"></form>
 </body>
 </html>

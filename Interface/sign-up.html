@@ -128,7 +128,8 @@
                     }
                 //console.log(response_got.message);
             }
-            caller.send(sender);   
+            caller.send(sender);  
+            return false; 
         }
     </script>
 </head>
@@ -136,7 +137,7 @@
     <H1 id="heading">SIGN-UP WINDOW</H1> 
     <p id="text">ENTER YOUR DETAILS</p>
     <div id="detail_box"><br>
-    <form id="form">
+    <form id="form" onsubmit="return api_details()">
     Email<br>
     <input type="email" name="email" class="textbox" required><br><br>
     First Name<br>
@@ -151,7 +152,7 @@
 	<label for="Other"><input type="radio" name='gender' value="Other">Other</label><br>
     <p id="error">------------------</p>
     <input type="reset" value="CLEAR" class="buttons">
-    <input type="button" value="GENERATE" class="buttons" onclick="api_details()"><br><br>
+    <input type="submit" value="GENERATE" class="buttons"><br><br>
     </div>
     </form>
     <p id="text">ALREADY A USER ? <a href="/sign-in"><input type="button" value="SIGN IN" class="buttons"></a></p>
