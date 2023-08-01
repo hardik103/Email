@@ -198,12 +198,11 @@
     Enter your OTP<br><input type="number" name="otp" class="textbox" oninput="check_length('otp')" id="otp" required><br><br>
     Create Password<br><input type="password" name="password" class="textbox" oninput="check_length('password_1')" id="password_1" required><br><br>
     ReEnter Password<br><input type="password" class="textbox" oninput="check_length('password_2')" id="password_2" required><br><br>
+    <p id="error"><br></p>
     <input type="reset" value="  Clear  " class="buttons">
-    <input type="button" value="  Resend " class="buttons" onclick="api_resend()">
-    <input type="submit" value=" Sign Up " class="buttons"><br>
-    <p id="error">-----------------</p><br>
-    </form>
+    <input type="submit" value=" Proceed " class="buttons"><br><br>
+</form>
 </div>
-
+<p id="text">DIDN'T RECEIVE THE OTP ?<br><input type="button" value="  Resend " class="buttons" onclick="api_resend()"></p>
 </body>
 </html>

@@ -181,7 +181,7 @@
             if( response_got.status == 108 ){
                     auto_detect();
             }else{
-                alert(response_got.message);
+                document.getElementById('error').innerHTML=response_got.message;
             }
         }
         caller.send(sender);
@@ -220,13 +220,13 @@
     <p id="heading">SIGN-IN WINDOW</p> 
     <p id="text">ENTER YOUR CREDENTIALS</p>
     <div id="detail_box">
-        <br>
+    <br>
     <form id="credentials" onsubmit="return api_credentials()">
     Email<br>
     <input type="email" name="email" class="textbox" required><br><br>
     Password<br>
-    <input type="password" name="password" class="textbox" required><br><br>
-    <p id="error"></p>
+    <input type="password" name="password" class="textbox" required><br>
+    <p id="error"><br></p>
     <input type="reset" value="CLEAR" class="buttons">
     <input type="submit" value="SIGN IN" class="buttons"><br><br>
     </form>
@@ -234,8 +234,7 @@
     <p id="text">
         NOT YET SIGNED UP ?<a href="/sign-up"><br><input type="button" value="SIGN UP" class="buttons"></a><br>
         FORGOT PASSWORD ?<br><input type="button" value="RESET" class="buttons" onclick="reset_section()"> 
+        <form id="reset" onsubmit="return api_reset()" align="center"></form>
     </p>
-    <p id="error"></p>
-    <form id="reset" onsubmit="return api_reset()" align="center"></form>
 </body>
 </html>
