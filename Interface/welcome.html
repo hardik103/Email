@@ -27,8 +27,8 @@
         }
         #hr
         {
-            margin-left: 15%;
-            margin-right: 15%;
+            margin-left: 50%;
+            margin-right: 50%;
         }
         #detail_box
         {
@@ -48,27 +48,35 @@
             border-radius: 20px;
             padding-left: 4.5vw;
             padding-right: 4.5vw;
-
         }
-        #extras
+        #slide
         {
-            margin-top: 14vh;
+            margin-top: 349px;
         }
         a
         {
             padding-left: 4.5vw;
             padding-right: 4.5vw;
-
         }
     </style>
+    <script>
+        function slider(){
+            document.getElementById("slide").style.marginTop = "14vh";
+            document.getElementById("slide").style.transitionDuration = "1.5s";
+
+            document.getElementById("hr").style.marginLeft = "15%";
+            document.getElementById("hr").style.marginRight = "15%";
+            document.getElementById("hr").style.transitionDuration = "1.5s";
+        }
+    </script>
 </head>
-<body>
+<body onload="slider()">
     <p id="heading">WELCOME TO MY WEB PROJECT</p> 
     <hr id="hr">
     <div id="detail_box">
         Sign up for free using your email and enter the OTP to verify and register as a user. When signed in successfully, a cookie is generated with an expire time of 1 min.
     </div>
-    <div id="extras" align="center">
+    <div id="slide" align="center">
         <a href="/sign-in"><input type="button" class="buttons" value="SIGN IN"></a>
         <a href="/sign-up"><input type="button" class="buttons" value="SIGN UP"></a>
     </div>
