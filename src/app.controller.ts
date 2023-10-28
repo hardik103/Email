@@ -32,4 +32,3 @@ export class AppController {
     response_out.sendFile(process.cwd()+'/Interface/home.html');
   }
 }
-//response_out.redirect('https://authentication-interface.s3.ap-south-1.amazonaws.com/verification.html');

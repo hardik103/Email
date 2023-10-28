@@ -10,9 +10,10 @@ import { AuthController } from './auth/auth.controller';
 import { AuthService } from './auth/auth.service';
 import { JWTService } from './JWT/jwt.service';
 import { JWTController } from './JWT/jwt.controller';
+import { ScheduleModule } from '@nestjs/schedule';
 
 @Module({
-  imports: [ConfigModule.forRoot(),DatabaseConnector,
+  imports: [ConfigModule.forRoot(),DatabaseConnector,ScheduleModule.forRoot(),
     MailerModule.forRoot({
       transport: {
         host: process.env.SENDER_HOST,

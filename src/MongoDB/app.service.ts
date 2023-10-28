@@ -191,6 +191,7 @@ export class MongoService {
 
   //............................................................................................................
 
+  //to reset the attempts of unregistered users
   async update_all_unregistered_attempts() :Promise<any> {
     await this.connect.db('user-unregistered').collection('attempts').updateMany({},{$set:{
       "otp-resend":3,
@@ -198,6 +199,7 @@ export class MongoService {
     }})
   }
 
+  //to reset the attempts of registered users
   async update_all_registered_attempts() :Promise<any> {
     await this.connect.db('user-registered').collection('attempts').updateMany({},{$set:{
       "otp-resend":3,

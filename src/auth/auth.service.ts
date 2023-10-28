@@ -4,6 +4,7 @@ import { MongoService } from 'src/MongoDB/app.service';
 import { Emailservice } from 'src/Mailer/app.service';
 import { DetailsDto } from 'src/DTOs/details.dto';
 import { OtpDto } from 'src/DTOs/otp.dto';
+import { Cron } from '@nestjs/schedule';
 
 @Injectable()
 export class AuthService {
@@ -267,6 +268,13 @@ export class AuthService {
         "message":"Server Error"
       };
     }
+  }
+
+  //everyday 00:01:01 resets the attempts to 3
+  @Cron('1 1 0 * * *')
+  async reset_attempts() {
+    await this.mongoService.update_all_unregistered_attempts();
+    await this.mongoService.update_all_registered_attempts();
   }
 
 }  

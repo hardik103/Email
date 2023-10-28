@@ -222,11 +222,4 @@ export class AuthController {
     return;
   }
 
-  @Get('daily')
-  async update(){
-    await this.mongoService.update_all_unregistered_attempts();
-    await this.mongoService.update_all_registered_attempts();
-    return;
-  }
-
 }
